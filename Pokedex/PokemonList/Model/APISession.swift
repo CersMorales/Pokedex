@@ -7,10 +7,11 @@
 
 import Foundation
  class APISession {
+     var pokemonsLoad : [printPokemons] = []
     var URLBase = "https://pokeapi.co/api/v2/pokemon"
     let limitePokemon = "?limit=1010"
      func getListPokemon(){
-         var pokemonsLoad : [printPokemons] = []
+         
         let url = URL(string: "\(URLBase)\(limitePokemon)")!
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
@@ -32,13 +33,12 @@ import Foundation
                         let pokemonResult = pokemon.name
                         let pokemonURL = pokemon.url
                         let pokemonData = printPokemons(id: IDPokemon, name: pokemonResult, url: pokemonURL)
-                        pokemonsLoad.append(pokemonData)
-                        print("\(pokemonsLoad)")
+                        self.pokemonsLoad.append(pokemonData)
                     }
                 } catch {
                     print("Error al decodificar JSON: \(error)")
                 }
-                print("\(pokemonsLoad)")
+                print("\(self.pokemonsLoad)")
             }
         }
        session.resume()
