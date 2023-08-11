@@ -33,13 +33,12 @@ import Foundation
                         let pokemonResult = pokemon.name
                         let pokemonURL = pokemon.url
                         let pokemonData = printPokemons(id: IDPokemon, name: pokemonResult, url: pokemonURL)
-                        pokemonsLoad.append(pokemonData)
-                        print("\(pokemonsLoad)")
+                        self.pokemonsLoad.append(pokemonData)
                     }
                 } catch {
                     print("Error al decodificar JSON: \(error)")
                 }
-                print("\(pokemonsLoad)")
+                print("\(self.pokemonsLoad)")
             }
         }
        session.resume()
