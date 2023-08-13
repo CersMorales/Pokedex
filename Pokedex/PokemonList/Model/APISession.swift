@@ -11,7 +11,6 @@ import Foundation
     var URLBase = "https://pokeapi.co/api/v2/pokemon"
     let limitePokemon = "?limit=1010"
      func getListPokemon(){
-         
         let url = URL(string: "\(URLBase)\(limitePokemon)")!
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
@@ -43,4 +42,9 @@ import Foundation
         }
        session.resume()
     }
+     func getImagePokemon (){
+         for i in 1...1010{
+             
+         }
+     }
 }
