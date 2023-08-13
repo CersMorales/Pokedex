@@ -25,7 +25,6 @@ import Foundation
                     let pokemonsLista = try decodable.decode(listPokemon.self, from: datos)
                     let decodificado = pokemonsLista.results
                     var contador = 0
-                    var PokemonList : [printPokemons] = []
                     for pokemon in decodificado{
                          contador += 1
                         let IDPokemon = contador
@@ -44,7 +43,7 @@ import Foundation
     }
      func getImagePokemon (){
          for i in 1...1010{
-             
+             print("\(i)")
          }
      }
 }
